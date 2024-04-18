@@ -1,11 +1,11 @@
 var AppPage = function() {
-
+    // Set the copyright
 	var _setCopyright = function() {
         const spanElement = document.getElementById('sp-copyright'); // Replace 'span' with the appropriate selector for your span element
         const currentYear = new Date().getFullYear();
         spanElement.textContent =`Copyright © ${currentYear} Agile Tech Ops Inc. All Rights Reserved.`;
 	}
-    
+    // Load the partial
     var _loadMenu = function() {
         // Fetch the header partial
         fetch('/components/header.html')

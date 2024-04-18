@@ -6,18 +6,17 @@ var PageContact = function() {
 
 		var mapbg = new GMaps({
 			div: '#gmapbg',
-			lat: 3.118823,
-			lng: 101.676084,
+			lat: 14.5575386,
+			lng: 121.0180785,
 			scrollwheel: false,
 		});
 
-
 		mapbg.addMarker({
-			lat: 3.118823,
-			lng: 101.676084,
-			title: 'Your Location',
+			at: 14.5575386,
+			lng: 121.0180785,
+			title: 'Agile Tech Ops Inc.',
 			infoWindow: {
-				content: '<h3>Jango Inc.</h3><p>25, Lorem Lis Street, Orange C, California, US</p>'
+				content: '<h3>Agile Tect Ops Inc.</h3><p>6783 Ayala Ave, Makati, 1200 Metro Manila</p>'
 			}
 		});
 	}
@@ -27,7 +26,6 @@ var PageContact = function() {
         init: function() {
 
             _init();
-
         }
 
     };
