@@ -52,6 +52,11 @@
 
 	<!-- BEGIN: LAYOUT/HEADERS/HEADER-3 -->
 	<!-- BEGIN: HEADER -->
+	<header id="header" class="c-layout-header c-layout-header-7 c-layout-header-dark-mobile c-header-transparent-dark"
+	data-minimize-offset="80">
+
+	</header>
+
 	<header id="header-3"
 		class="c-layout-header c-layout-header-7 c-layout-header-dark-mobile c-header-transparent-dark"
 		data-minimize-offset="80">
@@ -562,7 +567,7 @@
 			<div class="c-layout-footer-10-subfooter-container c-bg-grey">
 				<div class="c-layout-footer-10-subfooter container">
 					<div class="c-layout-footer-10-subfooter-content">
-						Copyright © 2024 Agile Tech Ops Inc. All Rights Reserved.
+						<span id="sp-copyright"></span>
 					</div>
 					<div class="c-layout-footer-10-subfooter-social">
 						<ul>
@@ -627,6 +632,7 @@
 	<!-- BEGIN: THEME SCRIPTS -->
 	<script src="/assets/base/js/components.js" type="text/javascript"></script>
 	<script src="/assets/base/js/app.js" type="text/javascript"></script>
+	<script src="/assets/base/js/common.js" type="text/javascript"></script>
 	<script>
 		$(document).ready(function () {
 			App.init(); // init core    
