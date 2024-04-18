@@ -2,6 +2,9 @@
 const defaultCache = [
   "/",
   "/index.html",
+  "/about-us/index.html",
+  "/contact/index.html",
+  "/services/index.html",
   "/offline.html"
 ];
 
