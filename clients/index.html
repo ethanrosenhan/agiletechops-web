@@ -11,8 +11,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<meta content="" name="description" />
-	<meta content="" name="author" />
+	<meta content="" name="The official website of Agile Tech Ops Inc." />
+	<meta content="" name="agiletechops developers" />
+	<link rel="manifest" href="/manifest.json">
 	<!-- BEGIN GLOBAL MANDATORY STYLES -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;subset=devanagari,latin-ext"
 		rel="stylesheet">
@@ -388,6 +389,13 @@
 			App.init(); // init core  
 			AppPage.setActiveMenu('clients'); // set current page
 		});
+	</script>
+	<script>
+		if (!navigator.serviceWorker.controller) {
+			navigator.serviceWorker.register("/assets/app/agiletechops/js/scripts/pages/sw.js").then(function(reg) {
+				console.log("Service worker has been registered for scope: " + reg.scope);
+			});
+		}       
 	</script>
 	<!-- END: THEME SCRIPTS -->
 
