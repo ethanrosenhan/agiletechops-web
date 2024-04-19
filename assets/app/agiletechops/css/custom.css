@@ -11,3 +11,16 @@
     padding: 10px;
     box-shadow: 5px 10px 8px #ECECEC;
 }
+
+.center-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.employee-image {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
