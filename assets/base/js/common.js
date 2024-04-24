@@ -55,8 +55,6 @@ var AppPage = function() {
 
     var _setActiveMenu = function(page) {
         Cookies.set('page', page);
-        //set selected page
-        console.log('setCookie: ' + page);
     }
 
     return {
