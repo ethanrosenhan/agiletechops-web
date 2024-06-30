@@ -43,12 +43,14 @@
 	<link rel="shortcut icon" href="../favicon.ico" />
 	<style>
 		gmp-map {
-			height: 100%;
+			height: 615px;
 		}
 	</style>
 </head>
 
 <body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen">
+	<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-mueVSIZeFXPqN6zmbtNQTk5GfIZWxNo&callback=console.debug&libraries=maps,marker&v=beta">
+			</script>
 	<!-- BEGIN: LAYOUT/HEADERS/HEADER-3 -->
 	<!-- BEGIN: HEADER -->
 	<header id="header" class="c-layout-header c-layout-header-7 c-layout-header-dark-mobile c-header-transparent-dark"
@@ -135,12 +137,11 @@
 					</div>
 				</div>
 			</div>
-			<div id="gmapbg" class="c-content-contact-1-gmap" style="height: 615px;">
-				<gmp-map center="14.55766773223877,121.0206527709961" zoom="14" map-id="AGILE_TECH_OPS">
-					<gmp-advanced-marker position="14.55766773223877,121.0206527709961" title="Agile Tech Ops. Inc."></gmp-advanced-marker>
+			<div class="c-content-contact-1-gmap" style="height: 615px;">
+				<gmp-map center="14.55766773223877,121.0206527709961" zoom="14" map-id="DEMO_MAP_ID">
+					<gmp-advanced-marker position="14.55766773223877,121.0206527709961" title="My location"></gmp-advanced-marker>
 				  </gmp-map>
 			</div>
-			
 		</div> <!-- END: CONTENT/CONTACT/CONTACT-1 -->
 
 		<!-- BEGIN: CONTENT/CONTACT/FEEDBACK-1-1 -->
@@ -178,6 +179,7 @@
 						</div>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 		<!-- END: CONTENT/CONTACT/FEEDBACK-1-1 -->
@@ -245,7 +247,6 @@
 	<!-- BEGIN: PAGE SCRIPTS -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-mueVSIZeFXPqN6zmbtNQTk5GfIZWxNo">
 	</script>
-	
 	<!-- END: PAGE SCRIPTS -->
 	<!-- END: LAYOUT/BASE/BOTTOM -->
 </body>
