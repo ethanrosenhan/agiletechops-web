@@ -225,7 +225,7 @@ h1 {
   padding: 10px; }
 
 .c-padding-20 {
-  padding: 20px; }
+  padding: 20px !important; }
 
 .c-left,
 .c-font-left {
