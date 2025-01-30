@@ -3200,7 +3200,8 @@ h1 {
       .c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-brand .c-desktop-logo {
         display: none; }
       .c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-brand .c-desktop-logo-inverse {
-        display: block; }
+        display: block; 
+        max-width: 110px;}
     .c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-mega-menu {
       line-height: 0px; }
       .c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-mega-menu .nav.navbar-nav > li > .c-link {
