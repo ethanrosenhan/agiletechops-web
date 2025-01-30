@@ -3166,7 +3166,8 @@ h1 {
     .c-layout-header .c-brand .c-desktop-logo-inverse {
       display: none; }
     .c-layout-header .c-brand .c-desktop-logo {
-      display: inline-block; }
+      display: inline-block; 
+      max-width: 180px;}
     .c-layout-header .c-brand .c-mobile-logo {
       display: none; }
   .c-layout-header .c-quick-search > .form-control {

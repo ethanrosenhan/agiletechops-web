@@ -24,3 +24,10 @@
     height: 150px;
     width: 150px;
 }
+
+@media (max-width: 991px) {
+    .c-layout-header .c-brand .c-mobile-logo {
+        max-width: 100px;
+        height: auto;
+    }
+}
