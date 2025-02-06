@@ -2044,6 +2044,36 @@ h1 {
 .c-bg-before-dark-4:before {
   background-color: #24272b !important; }
 
+  .c-bg-navy {
+    background-color: #14365c !important;
+  }
+  
+  .c-bg-navy.c-bg-opacity {
+    /* RGBa with 0.04 opacity */
+    background-color: rgba(20, 54, 92, 0.04) !important;
+  }
+  
+  .c-bg-navy.c-bg-opacity-2 {
+    /* RGBa with 0.4 opacity */
+    background-color: rgba(20, 54, 92, 0.4) !important;
+  }
+  
+  .c-bg-navy.c-bg-opacity-3 {
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(20, 54, 92, 0.6) !important;
+  }
+  
+  .c-bg-navy.c-bg-opacity-4 {
+    /* RGBa with 0.8 opacity */
+    background-color: rgba(20, 54, 92, 0.8) !important;
+  }
+  
+  .c-bg-navy.c-bg-opacity-5 {
+    /* RGBa with 0.9 opacity */
+    background-color: rgba(20, 54, 92, 0.9) !important;
+  }
+ 
+
 .c-bg-grey {
   background-color: #eeeeee !important; }
   .c-bg-grey.c-bg-opacity {
@@ -5993,7 +6023,7 @@ h1 {
     .c-layout-footer.c-layout-footer-1 .c-prefooter .c-logo {
       padding-bottom: 20px; }
     .c-layout-footer.c-layout-footer-1 .c-prefooter .c-about {
-      color: #a4a9ac;
+      color: #14365c;
       font-size: 17px;
       font-weight: 500;
       padding: 20px 0 10px 0; }
