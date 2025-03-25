@@ -3,42 +3,46 @@
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
-    <script>
-      window.CMS_MANUAL_INIT = true;
-    </script>
+    <!-- Decap CMS mounts here -->
+    <div id="nc-root"></div>
 
+    <!-- Load the CMS script first -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- Then initialize the CMS once it's ready -->
     <script>
-      CMS.init({
-        backend: {
-          name: "git-gateway",
-          branch: "main"
-        },
-        media_folder: "assets/blog-media",
-        public_folder: "/assets/blog-media",
-        collections: [
-          {
-            name: "blog",
-            label: "Blog",
-            folder: "content/blog",
-            create: true,
-            slug: "{{slug}}",
-            fields: [
-              { label: "Title", name: "title", widget: "string" },
-              { label: "Publish Date", name: "date", widget: "datetime" },
-              {
-                label: "Featured Image",
-                name: "thumbnail",
-                widget: "image",
-                required: false,
-                hint: "Upload a thumbnail image for this post."
-              },
-              { label: "Body", name: "body", widget: "markdown" }
-            ]
-          }
-        ]
+      window.addEventListener("load", function () {
+        CMS.init({
+          backend: {
+            name: "git-gateway",
+            branch: "main"
+          },
+          media_folder: "assets/blog-media",
+          public_folder: "/assets/blog-media",
+          collections: [
+            {
+              name: "blog",
+              label: "Blog",
+              folder: "content/blog",
+              create: true,
+              slug: "{{slug}}",
+              fields: [
+                { label: "Title", name: "title", widget: "string" },
+                { label: "Publish Date", name: "date", widget: "datetime" },
+                {
+                  label: "Featured Image",
+                  name: "thumbnail",
+                  widget: "image",
+                  required: false,
+                  hint: "Upload a thumbnail image for this post."
+                },
+                { label: "Body", name: "body", widget: "markdown" }
+              ]
+            }
+          ]
+        });
       });
     </script>
   </body>
