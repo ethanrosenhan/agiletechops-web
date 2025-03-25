@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
+    <script>
+      // Tell Decap CMS not to auto-initialize (so it doesn’t look for config.yml)
+      window.CMS_MANUAL_INIT = true;
+    </script>
+    <!-- Decap CMS script -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
-    <!-- Decap CMS mounts here -->
     <div id="nc-root"></div>
 
-    <!-- Load the CMS script first -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-    <!-- Then initialize the CMS once it's ready -->
     <script>
       window.addEventListener("load", function () {
         CMS.init({
