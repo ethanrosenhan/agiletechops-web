@@ -4,25 +4,9 @@
     <meta charset="utf-8" />
     <title>Content Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>
-      window.CMS_MANUAL_INIT = true;
-    </script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
     <div id="nc-root"></div>
-    <script>
-      window.addEventListener("load", function () {
-        fetch("/admin/config.yml")
-          .then((res) => res.text())
-          .then((configText) => {
-            CMS.init({ config: YAML.parse(configText) });
-          })
-          .catch((err) => {
-            console.error("Failed to load config.yml", err);
-          });
-      });
-    </script>
-    <script src="https://unpkg.com/yamljs/dist/yaml.min.js"></script>
   </body>
 </html>
