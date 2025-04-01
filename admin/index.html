@@ -8,7 +8,29 @@
   <body>
     <div id="nc-root"></div>
 
-    <!-- Decap CMS script loaded *after* body to ensure #nc-root exists -->
+    <!-- Load Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- Load config.yml from root -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+
+      window.addEventListener("load", function () {
+        fetch("/config.yml")
+          .then((res) => {
+            if (!res.ok) throw new Error("Config not found");
+            return res.text();
+          })
+          .then((configText) => {
+            CMS.init({ config: window.YAML.parse(configText) });
+          })
+          .catch((err) => {
+            console.error("Failed to load config.yml", err);
+          });
+      });
+    </script>
+
+    <!-- Load YAML parser -->
+    <script src="https://unpkg.com/yamljs/dist/yaml.min.js"></script>
   </body>
 </html>
