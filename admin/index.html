@@ -9,6 +9,13 @@
     <div id="nc-root"></div>
 
     <!-- Load Decap CMS only after the DOM is ready -->
+
+    <script>
+      if (!location.pathname.endsWith('index.html')) {
+        window.location.href = '/admin/index.html#';
+      }
+    </script>
+
     <script>
       window.addEventListener('DOMContentLoaded', function () {
         const script = document.createElement('script');
