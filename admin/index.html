@@ -1,66 +1,63 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Content Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!DOCTYPE html>
-<html>
+    <!-- Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Content Manager</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Prevent auto-initialization of CMS -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
 
-  <!-- Load Netlify Identity Widget -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-  <!-- Invite link redirect to Vercel CMS -->
-  <script>
-    if (window.location.hash.includes("invite_token=")) {
-      window.location.replace("https://www.agiletechops.com/admin/index.html" + window.location.hash);
-    }
-  </script>
-
-  <!-- Redirect to /admin/index.html# if not already there -->
-  <script>
-    if (!location.pathname.endsWith('index.html')) {
-      window.location.href = '/admin/index.html#';
-    }
-  </script>
-</head>
-
-
-<body>
-  <!-- Optional but helpful mount point -->
-  <div id="netlify-identity-widget"></div>
-
-  <!-- Mount Decap CMS -->
-  <div id="nc-root"></div>
-
-  <!-- DOM-based init for CMS and Identity -->
-  <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      // Load Decap CMS
-      const script = document.createElement('script');
-      script.src = 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js';
-      document.body.appendChild(script);
-
-      // Init Netlify Identity and point it to Netlify backend
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.init({
-          APIUrl: "https://agiletechops-web.netlify.app/.netlify/identity"
-        });
-
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-            window.netlifyIdentity.open();
-          }
-        });
+      // Redirect invite tokens from Netlify
+      if (window.location.hash.includes("invite_token=")) {
+        window.location.replace("https://www.agiletechops.com/admin/index.html" + window.location.hash);
       }
 
-    });
-  </script>
-</body>
+      // Force correct index route
+      if (!location.pathname.endsWith("index.html")) {
+        window.location.href = "/admin/index.html#";
+      }
+    </script>
+  </head>
 
+  <body>
+    <div id="netlify-identity-widget"></div>
+    <div id="nc-root"></div>
+
+    <!-- Init logic -->
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        // 1. Load Decap CMS
+        const cmsScript = document.createElement("script");
+        cmsScript.src = "https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js";
+        cmsScript.onload = () => {
+          // 2. Init Netlify Identity and bind login
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.init({
+              APIUrl: "https://agiletechops-web.netlify.app/.netlify/identity",
+            });
+
+            window.netlifyIdentity.on("init", (user) => {
+              if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                  document.location.href = "/admin/";
+                });
+
+                // Show login UI automatically (optional)
+                window.netlifyIdentity.open();
+              }
+            });
+
+            // 3. Finally, initialize Decap CMS manually
+            CMS.init();
+          }
+        };
+        document.body.appendChild(cmsScript);
+      });
+    </script>
+  </body>
 </html>
