@@ -8,15 +8,6 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Agile Tech Ops Inc. | Home</title>
-
-	<script>
-		const hash = window.location.hash;
-		if (hash.includes("invite_token=")) {
-		  window.location.href = "https://www.agiletechops.com/admin/index.html" + hash;
-		}
-	</script>
-
-
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -56,6 +47,16 @@
 	<!-- END THEME STYLES -->
 
 	<link rel="shortcut icon" href="favicon.ico" />
+
+	<script>
+		window.addEventListener('DOMContentLoaded', function () {
+		  const hash = window.location.hash;
+		  if (hash.includes("invite_token=")) {
+			// Use full redirect to ensure browser navigates properly
+			window.location.replace("https://www.agiletechops.com/admin/index.html" + hash);
+		  }
+		});
+	  </script>
 </head>
 
 <body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen">
