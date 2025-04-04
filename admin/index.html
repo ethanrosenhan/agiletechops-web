@@ -4,28 +4,24 @@
     <meta charset="utf-8" />
     <title>Content Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Redirect only if on Netlify's domain -->
-    <script>
-      if (
-        location.hostname.endsWith('netlify.app') ||
-        location.hostname === 'agiletechops.netlify.app' ||
-        location.hostname === 'agiletechops-web.netlify.app'
-      ) {
-        window.location.href = 'https://www.agiletechops.com/admin/';
-      }
-    </script>
   </head>
   <body>
     <div id="nc-root"></div>
 
-    <!-- Only load Decap CMS if we're not redirecting -->
+    <!-- Redirect if not already on /admin/index.html -->
     <script>
-      if (!location.hostname.includes('netlify.app')) {
+      if (!location.pathname.endsWith('index.html')) {
+        window.location.href = '/admin/index.html#';
+      }
+    </script>
+
+    <!-- Load Decap CMS after DOM is ready -->
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
         const script = document.createElement('script');
         script.src = 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js';
         document.body.appendChild(script);
-      }
+      });
     </script>
   </body>
 </html>
