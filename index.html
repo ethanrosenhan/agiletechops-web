@@ -8,6 +8,15 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Agile Tech Ops Inc. | Home</title>
+
+	<script>
+		const hash = window.location.hash;
+		if (hash.includes("invite_token=")) {
+		  window.location.href = "https://www.agiletechops.com/admin/index.html" + hash;
+		}
+	</script>
+
+
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
