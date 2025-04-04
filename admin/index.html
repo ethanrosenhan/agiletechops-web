@@ -38,8 +38,10 @@
           // 2. Init Netlify Identity and bind login
           if (window.netlifyIdentity) {
             window.netlifyIdentity.init({
-              APIUrl: "https://agiletechops-web.netlify.app/.netlify/identity",
-            });
+  APIUrl: "https://agiletechops-web.netlify.app/.netlify/identity",
+  redirectTo: "https://www.agiletechops.com/admin/"
+});
+
 
             window.netlifyIdentity.on("init", (user) => {
               if (!user) {
