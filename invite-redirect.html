@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting to CMS...</title>
+    <script>
+      const token = window.location.hash;
+      if (token.includes("invite_token=")) {
+        // Construct exact redirect preserving the invite token
+        const url = "https://www.agiletechops.com/admin/index.html" + token;
+        window.location.replace(url);
+      } else {
+        window.location.replace("https://www.agiletechops.com/");
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to CMS login...</p>
+  </body>
+</html>
