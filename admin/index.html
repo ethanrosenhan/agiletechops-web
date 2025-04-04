@@ -43,9 +43,11 @@
       script.src = 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js';
       document.body.appendChild(script);
 
-      // Init Netlify Identity AFTER DOM
+      // Init Netlify Identity and point it to Netlify backend
       if (window.netlifyIdentity) {
-        netlifyIdentity.init();
+        netlifyIdentity.init({
+          APIUrl: "https://agiletechops-web.netlify.app/.netlify/identity"
+        });
 
         netlifyIdentity.on("init", (user) => {
           if (!user) {
@@ -53,7 +55,7 @@
               document.location.href = "/admin/";
             });
 
-            // Open login modal immediately if unauthenticated (optional)
+            // Optional: automatically open login modal for first-time users
             netlifyIdentity.open();
           }
         });
@@ -61,6 +63,4 @@
     });
   </script>
 </body>
-
-
 </html>
