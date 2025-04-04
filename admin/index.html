@@ -4,6 +4,13 @@
     <meta charset="utf-8" />
     <title>Content Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <script>
+      if (window.location.hash.includes("invite_token=")) {
+        window.location.replace("https://www.agiletechops.com/admin/index.html" + window.location.hash);
+      }
+    </script>
+    
   </head>
   <body>
     <div id="nc-root"></div>
