@@ -1,34 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Content Manager</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <script>
-      if (window.location.hash.includes("invite_token=")) {
-        window.location.replace("https://www.agiletechops.com/admin/index.html" + window.location.hash);
-      }
-    </script>
-    
-  </head>
-  <body>
-    <div id="nc-root"></div>
 
-    <!-- Redirect if not already on /admin/index.html -->
-    <script>
-      if (!location.pathname.endsWith('index.html')) {
-        window.location.href = '/admin/index.html#';
-      }
-    </script>
+<head>
+  <meta charset="utf-8" />
+  <title>Content Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Load Decap CMS after DOM is ready -->
-    <script>
-      window.addEventListener('DOMContentLoaded', function () {
-        const script = document.createElement('script');
-        script.src = 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js';
-        document.body.appendChild(script);
+  <script>
+    if (window.location.hash.includes("invite_token=")) {
+      window.location.replace("https://www.agiletechops.com/admin/index.html" + window.location.hash);
+    }
+  </script>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
       });
-    </script>
-  </body>
+    }
+  </script>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          netlifyIdentity.open(); // this opens the modal right away
+        }
+      });
+      netlifyIdentity.init();
+    }
+  </script>
+
+
+</head>
+
+<body>
+  <div id="nc-root"></div>
+
+  <!-- Redirect if not already on /admin/index.html -->
+  <script>
+    if (!location.pathname.endsWith('index.html')) {
+      window.location.href = '/admin/index.html#';
+    }
+  </script>
+
+  <!-- Load Decap CMS after DOM is ready -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const script = document.createElement('script');
+      script.src = 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js';
+      document.body.appendChild(script);
+    });
+  </script>
+</body>
+
 </html>
