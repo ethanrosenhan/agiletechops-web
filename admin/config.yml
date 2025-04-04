@@ -1,7 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: ethanrosenhan/agiletechops-web
   branch: main
-  site_domain: agiletechops-web.netlify.app
 
 media_folder: "assets/blog-media"
 public_folder: "/assets/blog-media"

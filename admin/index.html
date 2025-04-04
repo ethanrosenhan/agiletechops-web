@@ -4,61 +4,25 @@
     <meta charset="utf-8" />
     <title>Content Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <!-- Prevent auto-initialization of CMS -->
     <script>
       window.CMS_MANUAL_INIT = true;
 
-      // Redirect invite tokens from Netlify
-      if (window.location.hash.includes("invite_token=")) {
-        window.location.replace("https://www.agiletechops.com/admin/index.html" + window.location.hash);
-      }
-
-      // Force correct index route
       if (!location.pathname.endsWith("index.html")) {
         window.location.href = "/admin/index.html#";
       }
     </script>
   </head>
-
   <body>
-    <div id="netlify-identity-widget"></div>
     <div id="nc-root"></div>
 
-    <!-- Init logic -->
     <script>
       window.addEventListener("DOMContentLoaded", function () {
-        // 1. Load Decap CMS
-        const cmsScript = document.createElement("script");
-        cmsScript.src = "https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js";
-        cmsScript.onload = () => {
-          // 2. Init Netlify Identity and bind login
-          if (window.netlifyIdentity) {
-            window.netlifyIdentity.init({
-  APIUrl: "https://agiletechops-web.netlify.app/.netlify/identity",
-  redirectTo: "https://www.agiletechops.com/admin/"
-});
-
-
-            window.netlifyIdentity.on("init", (user) => {
-              if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                  document.location.href = "/admin/";
-                });
-
-                // Show login UI automatically (optional)
-                window.netlifyIdentity.open();
-              }
-            });
-
-            // 3. Finally, initialize Decap CMS manually
-            CMS.init();
-          }
+        const script = document.createElement("script");
+        script.src = "https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js";
+        script.onload = () => {
+          CMS.init(); // manual init
         };
-        document.body.appendChild(cmsScript);
+        document.body.appendChild(script);
       });
     </script>
   </body>
