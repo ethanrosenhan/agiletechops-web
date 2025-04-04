@@ -6,6 +6,13 @@
 <!-- BEGIN HEAD -->
 
 <head>
+	<script>
+		if (window.location.hash.includes("invite_token=")) {
+		  // Immediate redirect without waiting for DOM
+		  window.location.replace("https://www.agiletechops.com/admin/index.html" + window.location.hash);
+		}
+	  </script>
+	  
 	<meta charset="utf-8" />
 	<title>Agile Tech Ops Inc. | Home</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,16 +54,6 @@
 	<!-- END THEME STYLES -->
 
 	<link rel="shortcut icon" href="favicon.ico" />
-
-	<script>
-		window.addEventListener('DOMContentLoaded', function () {
-		  const hash = window.location.hash;
-		  if (hash.includes("invite_token=")) {
-			// Use full redirect to ensure browser navigates properly
-			window.location.replace("https://www.agiletechops.com/admin/index.html" + hash);
-		  }
-		});
-	  </script>
 </head>
 
 <body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen">
