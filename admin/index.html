@@ -45,22 +45,22 @@
 
       // Init Netlify Identity and point it to Netlify backend
       if (window.netlifyIdentity) {
-        netlifyIdentity.init({
+        window.netlifyIdentity.init({
           APIUrl: "https://agiletechops-web.netlify.app/.netlify/identity"
         });
 
-        netlifyIdentity.on("init", (user) => {
+        window.netlifyIdentity.on("init", (user) => {
           if (!user) {
-            netlifyIdentity.on("login", () => {
+            window.netlifyIdentity.on("login", () => {
               document.location.href = "/admin/";
             });
-
-            // Optional: automatically open login modal for first-time users
-            netlifyIdentity.open();
+            window.netlifyIdentity.open();
           }
         });
       }
+
     });
   </script>
 </body>
+
 </html>
