@@ -4,7 +4,7 @@ collections:
     output: true
     title: Blog
     editor:
-      type: html
+      type: markdown
     fields:
       title:
         type: text
