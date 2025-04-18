@@ -1,0 +1,16 @@
+collections:
+  blog:
+    path: blog/
+    output: true
+    title: Blog
+    editor:
+      type: markdown
+    fields:
+      title:
+        type: text
+      author:
+        type: text
+      date:
+        type: datetime
+
+media_dir: blog-media
