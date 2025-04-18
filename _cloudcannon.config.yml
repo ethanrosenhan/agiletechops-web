@@ -13,4 +13,4 @@ collections:
       date:
         type: datetime
 
-media_dir: blog-media
+media_dir: uploads
