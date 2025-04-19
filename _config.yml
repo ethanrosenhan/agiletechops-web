@@ -1,0 +1,5 @@
+title: "Agile Tech Ops Blog"
+baseurl: ""
+theme: minima
+markdown: kramdown
+permalink: /blog/:title/
