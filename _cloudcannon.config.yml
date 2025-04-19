@@ -1,8 +1,7 @@
-collections:
-  blog:
-    path: blog/
+collections_config:
+  posts:
     output: true
-    title: Blog
+    title: Posts
     editor:
       type: markdown
     fields:
