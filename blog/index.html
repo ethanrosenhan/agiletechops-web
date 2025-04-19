@@ -35,7 +35,6 @@ title: Blog
     color: inherit;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 100%;
   }
 
@@ -60,20 +59,11 @@ title: Blog
   .post-excerpt {
     font-size: 1rem;
     color: #444;
-    flex-grow: 1;
-  }
-
-  .read-more {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #007acc;
-    text-align: right;
   }
 </style>
 
 <div class="blog-container">
-  <h1 class="blog-heading">Latest Insights</h1>
+  <h1 class="blog-heading">From the Agile Tech Ops Team</h1>
 
   <div class="post-grid">
     {% for post in site.posts %}
@@ -85,7 +75,6 @@ title: Blog
             {{ post.excerpt | strip_html | truncate: 140 }}
           </p>
         </div>
-        <div class="read-more">Read more →</div>
       </a>
     {% endfor %}
   </div>
