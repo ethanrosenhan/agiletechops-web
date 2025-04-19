@@ -1,0 +1,92 @@
+---
+layout: default
+title: Blog
+---
+
+<style>
+  .blog-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+
+  .blog-heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+    color: #2c3e50;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .post-card {
+    background: white;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  }
+
+  .post-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  .post-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+  }
+
+  .post-excerpt {
+    font-size: 1rem;
+    color: #444;
+    flex-grow: 1;
+  }
+
+  .read-more {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #007acc;
+    text-align: right;
+  }
+</style>
+
+<div class="blog-container">
+  <h1 class="blog-heading">Latest Insights</h1>
+
+  <div class="post-grid">
+    {% for post in site.posts %}
+      <a href="{{ post.url }}" class="post-card">
+        <div>
+          <h3 class="post-title">{{ post.title }}</h3>
+          <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+          <p class="post-excerpt">
+            {{ post.excerpt | strip_html | truncate: 140 }}
+          </p>
+        </div>
+        <div class="read-more">Read more →</div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
