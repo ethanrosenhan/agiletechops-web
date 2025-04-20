@@ -1,5 +1,5 @@
 ---
-title: Why Hiring Overseas Assistants Is a Great Move for Growing Businesses
+title: Why Hiring Overseas Assistants Is a Smart Move for Growing Businesses
 author: Ethan
 date: 2025-04-18T17:00:00-07:00
 tags:
