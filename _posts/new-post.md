@@ -1,13 +1,13 @@
 ---
 title: Why Hiring Overseas Assistants Is a Smart Move for Growing Businesses
-author: Ethan
-date: 2025-04-18T17:00:00-07:00
+date: 2025-04-18
+layout: post
 tags:
-  - Virtual Assistants
-  - Outsourcing
-  - Small Business
-  - Operations
   - BPO
+  - Business Process Outsourcing
+  - Small Business
+  - Medium Business
+  - Outsourcing
 ---
 As a business owner, your to-do list is never-ending. Emails, invoices, scheduling, data entry, research — the tasks are small, but they eat up your time.
 
