@@ -9,11 +9,14 @@ collections_config:
     fields:
       title:
         type: text
+        default: ""
       author:
         type: text
+        default: ""
       date:
-        type: date
+        type: datetime
       tags:
         type: list
+        default: ""
 
 media_dir: uploads
