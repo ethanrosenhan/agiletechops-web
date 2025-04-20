@@ -1,16 +1,19 @@
 collections_config:
   posts:
+    path: _posts/
     output: true
     title: Posts
+    filename: "{{ date | date: '%Y-%m-%d' }}-{{ title | slugify }}"
     editor:
       type: markdown
-    filename: "{{date}}-{{title | slugify}}"
     fields:
       title:
         type: text
       author:
         type: text
       date:
-        type: datetime
+        type: date
+      tags:
+        type: list
 
 media_dir: uploads
