@@ -4,6 +4,7 @@ collections_config:
     title: Posts
     editor:
       type: markdown
+    filename: "{{date}}-{{title | slugify}}"
     fields:
       title:
         type: text
