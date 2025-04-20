@@ -3,7 +3,7 @@ collections_config:
     path: _posts/
     output: true
     title: Posts
-    filename: "{{ date | date: '%Y-%m-%d' }}-{{ title | slugify }}"
+    filename: "{{ fields.date | date: '%Y-%m-%d' }}-{{ fields.title | slugify }}"
     editor:
       type: markdown
     fields:
