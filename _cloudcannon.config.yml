@@ -18,5 +18,13 @@ collections_config:
       tags:
         type: list
         default: ""
+      metaTitle:
+        type: text
+        default: ""
+        comment: "SEO: Custom meta title for this post"
+      metaDescription:
+        type: text
+        default: ""
+        comment: "SEO: Custom meta description for search engines"
 
 media_dir: uploads
