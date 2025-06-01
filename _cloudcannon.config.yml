@@ -1,0 +1,30 @@
+collections_config:
+  posts:
+    path: _posts/
+    output: true
+    title: Posts
+    filename: "{{ fields.date | date: '%Y-%m-%d' }}-{{ fields.title | slugify }}"
+    editor:
+      type: markdown
+    fields:
+      title:
+        type: text
+        default: ""
+      author:
+        type: text
+        default: ""
+      date:
+        type: datetime
+      tags:
+        type: list
+        default: ""
+      metaTitle:
+        type: text
+        default: ""
+        comment: "SEO: Custom meta title for this post"
+      metaDescription:
+        type: text
+        default: ""
+        comment: "SEO: Custom meta description for search engines"
+
+media_dir: uploads
