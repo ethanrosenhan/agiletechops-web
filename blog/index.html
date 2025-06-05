@@ -2,79 +2,136 @@
 title: Blog
 ---
 
-<style>
-  .blog-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-  }
+<!DOCTYPE html>
+<html lang="en">
 
-  .blog-heading {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-weight: 700;
-    color: #2c3e50;
-  }
+<head>
+  <meta charset="utf-8" />
+  <title>Agile Tech Ops Inc. | Blog</title>
+  <meta name="description" content="Insights and resources from Agile Tech Ops — learn about outsourcing, staffing, and smart growth for SMBs.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  .post-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-  }
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+  <link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/app/agiletechops/css/components.css" rel="stylesheet">
+  <link href="/assets/app/agiletechops/css/themes/default.css" rel="stylesheet">
+  <link href="/assets/app/agiletechops/css/custom.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico" />
 
-  .post-card {
-    background: white;
-    border: 1px solid #eaeaea;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
+  <style>
+    .blog-container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
 
-  .post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-  }
+    .blog-heading {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 700;
+      color: #2c3e50;
+    }
 
-  .post-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
 
-  .post-date {
-    font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 0.75rem;
-  }
+    .post-card {
+      background: white;
+      border: 1px solid #eaeaea;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
 
-  .post-excerpt {
-    font-size: 1rem;
-    color: #444;
-  }
-</style>
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
 
-<div class="blog-container">
-  <h1 class="blog-heading">From the Agile Tech Ops Team</h1>
+    .post-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
 
-  <div class="post-grid">
-    {% for post in site.posts %}
-      <a href="{{ post.url }}" class="post-card">
-        <div>
-          <h3 class="post-title">{{ post.title }}</h3>
-          <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
-          <p class="post-excerpt">
-            {{ post.excerpt | strip_html | truncate: 140 }}
-          </p>
-        </div>
-      </a>
-    {% endfor %}
+    .post-date {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+
+    .post-excerpt {
+      font-size: 1rem;
+      color: #444;
+    }
+  </style>
+</head>
+
+<body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen">
+  <!-- BEGIN: HEADER -->
+  <header id="header" class="c-layout-header c-layout-header-7 c-layout-header-dark-mobile c-header-transparent-dark" data-minimize-offset="80">
+    <!-- You may be using an include or injecting nav HTML here -->
+  </header>
+
+  <!-- BEGIN: MAIN BLOG CONTENT -->
+  <div class="c-layout-page">
+    <div class="blog-container">
+      <h1 class="blog-heading">From the Agile Tech Ops Team</h1>
+
+      <div class="post-grid">
+        {% for post in site.posts %}
+        <a href="{{ post.url }}" class="post-card">
+          <div>
+            <h3 class="post-title">{{ post.title }}</h3>
+            <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+            <p class="post-excerpt">
+              {{ post.excerpt | strip_html | truncate: 140 }}
+            </p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
   </div>
-</div>
+  <!-- END: MAIN BLOG CONTENT -->
+
+  <!-- BEGIN: FOOTER -->
+  <footer id="footer" class="c-layout-footer c-layout-footer-10 c-bg-gray">
+    <div class="container">
+      <ul class="list-inline">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/blog/">Blog</a></li> <!-- Added blog link -->
+      </ul>
+    </div>
+  </footer>
+
+  <div class="c-layout-go2top">
+    <i class="icon-arrow-up"></i>
+  </div>
+
+  <!-- BEGIN: JS SCRIPTS -->
+  <script src="/assets/plugins/jquery.min.js"></script>
+  <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/assets/base/js/components.js"></script>
+  <script src="/assets/base/js/app.js"></script>
+  <script>
+    $(document).ready(function () {
+      App.init();
+    });
+  </script>
+</body>
+
+</html>
