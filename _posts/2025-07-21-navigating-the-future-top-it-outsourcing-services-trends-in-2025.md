@@ -1,6 +1,6 @@
 ---
 title: 'Navigating the Future: Top IT Outsourcing Services Trends in 2025'
-author: Agile Team
+author: Agile Writing Team
 date: 2025-07-21T00:00:00Z
 layout: post
 tags:
