@@ -1,7 +1,7 @@
 ---
 title: 'Navigating the Future: Top IT Outsourcing Services Trends in 2025'
 author: Agile Team
-date: 2025-07-21T17:00:00-07:00
+date: 2025-07-21
 layout: post
 tags:
   - BPO
