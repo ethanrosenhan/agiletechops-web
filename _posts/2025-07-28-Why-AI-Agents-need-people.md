@@ -1,5 +1,5 @@
 ---
-title: https://www.agiletechops.com/blog/
+title: 'Why AI Still Needs People: The Power of Hybrid Teams for SMB Growth'
 author: The Agile Team
 date: 2025-07-28T00:00:00Z
 layout: post
